@@ -3,7 +3,9 @@ import React, { Component } from 'react'
 export default class RecipeSearch extends Component {
     render() {
         return (
-            <React.Fragment>Recipe Search</React.Fragment>
+            <React.Fragment>
+                <h1>Recipe Search</h1>
+            </React.Fragment>
         )
     }
 }
