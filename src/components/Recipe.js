@@ -12,7 +12,7 @@ export default class Recipe extends Component {
 
         return (
             <React.Fragment>
-                <h1>Recipe</h1>
+               
                 <div className="col-10 mx-auto col-md-6 col-lg-4">
                     <div className="card">
                         <img src={image_url} className="img-card-top" style={{height:"14rem"}} alt="recipe" />
