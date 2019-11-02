@@ -6,7 +6,7 @@ import RecipeDetails from './components/RecipeDetails';
 
 class App extends Component {
   state = {
-    recipes: [],
+    recipes: recipes,
     url:"https://www.food2fork.com/api/search?key=449086311e8ab1ade345a8553f9ced7f"
   };
 
