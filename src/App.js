@@ -1,16 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import {recipes} from './tempList';
+import { recipes } from './tempList';
 import RecipeList from './components/RecipeList';
 import RecipeDetails from './components/RecipeDetails';
 
-function App() {
-  return (
-    <React.Fragment>
-      <RecipeList />
-      <RecipeDetails />
-    </React.Fragment>
-  );
+class App extends Component {
+  state = {
+    recipes: [],
+    url:"https://www.food2fork.com/api/search?key=449086311e8ab1ade345a8553f9ced7f"
+  };
+
+  async getRecipes() {
+    try{
+      const data = await fetch(this.state.url);
+      const jsonData = await data.json();
+      this.setState({
+        recipes: jsonData.recipes
+      });
+    }catch(error){
+      console.log(error);
+    }
+  }
+
+  componentDidMount(){
+    this.getRecipes();
+  }
+
+  render(){
+    console.log(this.state.recipes);
+  
+    return (
+      <React.Fragment>
+        <RecipeList />
+        <RecipeDetails />
+      </React.Fragment>
+    );
+ }
 }
 
 export default App;
