@@ -1,10 +1,14 @@
 import React from 'react';
 import './App.css';
+import {recipes} from './tempList';
+import RecipeList from './components/RecipeList';
+import RecipeDetails from './components/RecipeDetails';
 
 function App() {
   return (
     <React.Fragment>
-      Thura Aung
+      <RecipeList />
+      <RecipeDetails />
     </React.Fragment>
   );
 }
