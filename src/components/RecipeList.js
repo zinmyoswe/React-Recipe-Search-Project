@@ -8,7 +8,7 @@ export default class RecipeList extends Component {
         return (
             <React.Fragment>
                 <RecipeSearch />
-                <h1>Recipe List</h1>
+                
                 <div className="container my-5">
                     {/* title */}
                     <div className="row">

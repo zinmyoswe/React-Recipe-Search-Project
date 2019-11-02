@@ -31,7 +31,7 @@ class App extends Component {
   
     return (
       <React.Fragment>
-        <RecipeList />
+        <RecipeList recipes={this.state.recipes}/>
         <RecipeDetails />
       </React.Fragment>
     );
