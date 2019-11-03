@@ -2,14 +2,34 @@ import React, { Component } from 'react';
 import {recipe} from "../tempDetails";
 
 export default class RecipeDetails extends Component {
-    constructor(props){
-        super(props);
+    // constructor(props){
+    //     super(props);
 
-        this.state ={
-            recipe: recipe,
-            url: `https://www.food2fork.com/api/get?key=449086311e8ab1ade345a8553f9ced7f&rId=${this.props.id}`
-        };
+    //     this.state ={
+    //         recipe: recipe,
+    //         url: `https://www.food2fork.com/api/get?key=449086311e8ab1ade345a8553f9ced7f&rId=${this.props.id}`
+    //     };
+    // }
+
+    // async componentDidMount() {
+    //     try{
+    //       const data = await fetch(this.state.url);
+    //       const jsonData = await data.json();
+    //       this.setState({
+    //         recipes: jsonData.recipe
+    //       });
+    //     }catch(error){
+    //       console.log(error);
+    //     }
+    //   }
+    state ={
+        recipe: recipe
+    };
+
+    async componentDidMount(){
+        console.log(this.props.id);
     }
+
     render() {
         const{
             image_url,
@@ -30,7 +50,7 @@ export default class RecipeDetails extends Component {
                         {/* details */}
                         <div className="col-10 mx-auto col-md-6 my-3">
                             <h5 className="text-uppercase">{title}</h5>
-                            <h6 className="text-dark text-slanted">
+                            <h6 className="text-slanted">
                                 Provided By <b>{publisher}</b>
                             </h6>
                             <a href={publisher_url} target="_blank" className="btn btn-primary mt-2" rel="noopener noreferrer">
@@ -40,7 +60,7 @@ export default class RecipeDetails extends Component {
                                 Recipe Url
                             </a>
                             <ul className="list-group list-group-flush mt-4">
-                                <h2 className="mt-3 mb-4">Ingredients</h2>
+                                <h2 className="mt-3 mb-4 ">Ingredients</h2>
                                 {ingredients.map((item, index) => {
                                     return (
                                         <li key={index} className="text-slanted">
