@@ -38,9 +38,12 @@ export default class RecipeDetails extends Component {
             try {
                 const data = await fetch(url);
                 const jsonData = await data.json();
-                this.setState({
-                    recipe: jsonData.recipe
-                });      
+                 this.setState(
+              (state, props) => {
+                return { recipe: jsonData.recipe };
+              },
+              () => {}
+            );     
               } catch (error) {
                 console.log(error);
               }
