@@ -43,6 +43,12 @@ class App extends Component {
     }
   };
 
+  handleIndex = index => {
+    this.setState({
+      pageIndex: index
+    });
+  };
+
   render(){
     // console.log(this.state.recipes);
   
