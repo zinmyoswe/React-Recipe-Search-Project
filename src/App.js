@@ -60,8 +60,7 @@ class App extends Component {
   
     return (
       <React.Fragment>
-        
-        
+        {this.displayPage(this.state.pageIndex)}
       </React.Fragment>
     );
  }
