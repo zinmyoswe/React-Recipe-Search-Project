@@ -2,34 +2,28 @@ import React, { Component } from 'react';
 import {recipe} from "../tempDetails";
 
 export default class RecipeDetails extends Component {
-    // constructor(props){
-    //     super(props);
+    constructor(props){
+        super(props);
 
-    //     this.state ={
-    //         recipe: recipe,
-    //         url: `https://www.food2fork.com/api/get?key=449086311e8ab1ade345a8553f9ced7f&rId=${this.props.id}`
-    //     };
-    // }
-
-    // async componentDidMount() {
-    //     try{
-    //       const data = await fetch(this.state.url);
-    //       const jsonData = await data.json();
-    //       this.setState({
-    //         recipes: jsonData.recipe
-    //       });
-    //     }catch(error){
-    //       console.log(error);
-    //     }
-    //   }
-    state ={
-        recipe: recipe
-    };
-
-    async componentDidMount(){
-        console.log(this.props.id);
+        this.state ={
+            recipe: recipe,
+            url: `https://www.food2fork.com/api/get?key=449086311e8ab1ade345a8553f9ced7f&rId=${
+                this.props.id
+            }`
+        };
     }
 
+    async componentDidMount() {
+        try{
+          const data = await fetch(this.state.url);
+          const jsonData = await data.json();
+          this.setState({
+            recipe: jsonData.recipe
+          });
+        }catch(error){
+          console.log(error);
+        }
+      }
     render() {
         const{
             image_url,
@@ -41,7 +35,7 @@ export default class RecipeDetails extends Component {
         } = this.state.recipe;
         return (
             <React.Fragment>
-                <div className="container">
+                 <div className="container">
                     <div className="row">
                         <div className="col-10 mx-auto col-md-6 my-3">
                             <button type="button" className="btn btn-warning mb-5">Back to recipe list</button>
