@@ -8,7 +8,8 @@ class App extends Component {
   state = {
     recipes: recipes,
     url:"https://www.food2fork.com/api/search?key=449086311e8ab1ade345a8553f9ced7f",
-    details_id:35386
+    details_id:35386,
+    pageIndex: 0
   };
 
   async getRecipes() {
@@ -26,6 +27,8 @@ class App extends Component {
   componentDidMount(){
     this.getRecipes();
   }
+
+  
 
   render(){
     // console.log(this.state.recipes);
