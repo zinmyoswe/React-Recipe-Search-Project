@@ -51,7 +51,7 @@ class App extends Component {
       pageIndex: index
     });
   };
-  handleDetails = (index,id) =>{
+  handleDetails = (index,id) => {
     this.setState({
       pageIndex: index,
       details_id: id
