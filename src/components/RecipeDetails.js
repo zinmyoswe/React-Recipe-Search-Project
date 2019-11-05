@@ -8,7 +8,7 @@ export default class RecipeDetails extends Component {
 
     //     this.state ={
     //         recipe: recipe,
-    //         url: `https://www.food2fork.com/api/get?key=449086311e8ab1ade345a8553f9ced7f&rId=${
+    //         url: `https://www.food2fork.com/api/get?key=4286ded95c99663e89353216ac97a8cb&rId=${
     //             this.props.id
     //         }`
     //     };
@@ -33,7 +33,7 @@ export default class RecipeDetails extends Component {
      async componentDidMount(){
             console.log(this.props.id);
             const id = this.props.id;
-            const url = `https://www.food2fork.com/api/get?key=449086311e8ab1ade345a8553f9ced7f&rId=${id}`
+            const url = `https://www.food2fork.com/api/get?key=4286ded95c99663e89353216ac97a8cb&rId=${id}`
     
             try {
                 const data = await fetch(url);
@@ -58,14 +58,13 @@ export default class RecipeDetails extends Component {
             title,
             ingredients
         } = this.state.recipe;
-        const { handleIndex } = this.props;
         return (
             <React.Fragment>
                  <div className="container">
                     <div className="row">
                         <div className="col-10 mx-auto col-md-6 my-3">
                             <button type="button" className="btn btn-warning mb-5" 
-                            onClick={() => handleIndex(1)}>Back to recipe list</button>
+                            >Back to recipe list</button>
                             <img src={image_url} className="d-block w-100" alt="recipe" />
                         </div>
                         {/* details */}
