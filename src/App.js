@@ -7,7 +7,7 @@ import RecipeDetails from './components/RecipeDetails';
 class App extends Component {
   state = {
     recipes: recipes,
-    url:"https://www.food2fork.com/api/search?key=4286ded95c99663e89353216ac97a8cb",
+    url:"https://www.food2fork.com/api/search?key=7c225230e440096da6486d2bbd91b98f",
     details_id:35384,
     pageIndex: 1
   };
